@@ -1,0 +1,8 @@
+[[CPP]]
+https://www.youtube.com/watch?v=bvCEqS4S0sg&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=40
+
+- **Rule of Three**: If a class requires a custom destructor, copy constructor, or copy assignment operator, it likely needs all three. This rule is essential for managing resources properly, especially memory, in C++.
+- **Destructor**: The destructor is responsible for releasing resources when an object is no longer needed. Custom destructors are necessary when a class manages dynamic memory (e.g., using `new`).
+- **Copy Constructor**: The copy constructor defines how a new object is created as a copy of an existing object. A custom copy constructor is needed to perform a deep copy when a class contains pointers to dynamically allocated memory. Without a custom copy constructor, a shallow copy would occur, leading to issues like double deletion.
+- **Copy Assignment Operator**: ==The copy assignment operator defines how the content of an existing object is replaced with the content of another existing object.== Similar to the copy constructor, a custom copy assignment operator is required for deep copying to avoid shallow copies and related problems.
+- **Law of the Big Two**: This lesser-known rule states that if a class requires either a custom copy constructor or a custom copy assignment operator, it likely needs both. This is because if you need to customize copying behavior in one context, you'll likely need to customize it in the other to maintain consistency and avoid unexpected behavior related to object copying.
