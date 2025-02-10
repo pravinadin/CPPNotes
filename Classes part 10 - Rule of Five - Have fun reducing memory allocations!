@@ -2,6 +2,9 @@
 
 This document summarizes the "Rule of Five" in C++ as explained in Mike Shah's video, focusing on the `IntArray` class example. The Rule of Five is crucial for efficient memory and resource management in C++ classes, especially when dealing with dynamic memory allocation.
 
+[[CPP]]
+https://youtu.be/2U1eHurVnXE
+
 ## Understanding the Rule of Five
 
 The Rule of Five, also known as the "Law of Five" or "Big Five," expands upon the earlier "Rule of Three" (or "Big Three"). It encompasses five special member functions that are essential for classes managing their own resources (like dynamically allocated memory):
