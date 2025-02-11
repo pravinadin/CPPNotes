@@ -51,6 +51,7 @@ int main() {
     udt u4 = udt(500); // Direct initialization: OK
     return 0;
 }
+```
 
 With the explicit keyword, lines attempting implicit conversions (udt u1 = 500; and udt u2 = 500.5f;) will now result in compile-time errors, enforcing explicit initialization and improving type safety.
 
