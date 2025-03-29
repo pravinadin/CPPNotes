@@ -1,5 +1,81 @@
 # C++ STL Containers Cheat Sheet
 
+# C++ STL Functions and Containers Grid
+
+| Function/Operation | vector | list | deque | array | forward_list | map | unordered_map | set | unordered_set | stack | queue | priority_queue |
+|-------------------|:------:|:----:|:-----:|:-----:|:------------:|:---:|:-------------:|:---:|:-------------:|:-----:|:-----:|:--------------:|
+| **Element Access** |        |      |       |       |              |     |               |     |               |       |       |                |
+| at()              |   ✅   |  ❌  |   ✅  |   ✅  |      ❌      |  ✅  |       ✅     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| operator[]        |   ✅   |  ❌  |   ✅  |   ✅  |      ❌      |  ✅  |       ✅     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| front()           |   ✅   |  ✅  |   ✅  |   ✅  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ✅  |       ❌      |
+| back()            |   ✅   |  ✅  |   ✅  |   ✅  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ✅  |   ❌  |       ❌      |
+| data()            |   ✅   |  ❌  |   ✅  |   ✅  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| top()             |   ❌   |  ❌  |   ❌  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ✅  |   ❌  |       ✅      |
+| find()            |   ❌*  |  ❌* |   ❌* |   ❌* |      ❌*     |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| **Iterators**     |        |      |       |       |              |     |               |     |               |       |       |                |
+| begin()/end()     |   ✅   |  ✅  |   ✅  |   ✅  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| rbegin()/rend()   |   ✅   |  ✅  |   ✅  |   ✅  |      ❌      |  ✅  |       ❌     |  ✅  |       ❌     |   ❌  |   ❌  |       ❌      |
+| **Capacity**      |        |      |       |       |              |     |               |     |               |       |       |                |
+| empty()           |   ✅   |  ✅  |   ✅  |   ✅  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ✅  |   ✅  |       ✅      |
+| size()            |   ✅   |  ✅  |   ✅  |   ✅  |      ❌      |  ✅  |       ✅     |  ✅  |       ✅     |   ✅  |   ✅  |       ✅      |
+| max_size()        |   ✅   |  ✅  |   ✅  |   ✅  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ✅  |   ✅  |       ✅      |
+| reserve()         |   ✅   |  ❌  |   ❌  |   ❌  |      ❌      |  ❌  |       ✅     |  ❌  |       ✅     |   ❌  |   ❌  |       ❌      |
+| capacity()        |   ✅   |  ❌  |   ❌  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| shrink_to_fit()   |   ✅   |  ❌  |   ✅  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| **Modifiers**     |        |      |       |       |              |     |               |     |               |       |       |                |
+| clear()           |   ✅   |  ✅  |   ✅  |   ❌  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| insert()          |   ✅   |  ✅  |   ✅  |   ❌  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| emplace()         |   ✅   |  ✅  |   ✅  |   ❌  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| erase()           |   ✅   |  ✅  |   ✅  |   ❌  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| push_back()       |   ✅   |  ✅  |   ✅  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| emplace_back()    |   ✅   |  ✅  |   ✅  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| pop_back()        |   ✅   |  ✅  |   ✅  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| push_front()      |   ❌   |  ✅  |   ✅  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| emplace_front()   |   ❌   |  ✅  |   ✅  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| pop_front()       |   ❌   |  ✅  |   ✅  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| resize()          |   ✅   |  ✅  |   ✅  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| swap()            |   ✅   |  ✅  |   ✅  |   ✅  |      ✅      |  ✅  |       ✅     |  ✅  |       ✅     |   ✅  |   ✅  |       ✅      |
+| push()            |   ❌   |  ❌  |   ❌  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ✅  |   ✅  |       ✅      |
+| pop()             |   ❌   |  ❌  |   ❌  |   ❌  |      ❌      |  ❌  |       ❌     |  ❌  |       ❌     |   ✅  |   ✅  |       ✅      |
+| merge()           |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| splice()          |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| remove()          |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| remove_if()       |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| unique()          |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| sort()            |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| reverse()         |   ❌   |  ✅  |   ❌  |   ❌  |      ✅      |  ❌  |       ❌     |  ❌  |       ❌     |   ❌  |   ❌  |       ❌      |
+| **Operations**    |        |      |       |       |              |     |               |     |               |       |       |                |
+| count()           |   ❌*  |  ❌* |   ❌* |   ❌* |      ❌*     |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| equal_range()     |   ❌*  |  ❌* |   ❌* |   ❌* |      ❌*     |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| lower_bound()     |   ❌*  |  ❌* |   ❌* |   ❌* |      ❌*     |  ✅  |       ❌     |  ✅  |       ❌     |   ❌  |   ❌  |       ❌      |
+| upper_bound()     |   ❌*  |  ❌* |   ❌* |   ❌* |      ❌*     |  ✅  |       ❌     |  ✅  |       ❌     |   ❌  |   ❌  |       ❌      |
+| emplace_hint()    |   ❌   |  ❌  |   ❌  |   ❌  |      ❌      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| extract()         |   ❌   |  ❌  |   ❌  |   ❌  |      ❌      |  ✅  |       ✅     |  ✅  |       ✅     |   ❌  |   ❌  |       ❌      |
+| merge()           |   ❌   |  ❌  |   ❌  |   ❌  |      ❌      |  ✅  |       ❌     |  ✅  |       ❌     |   ❌  |   ❌  |       ❌      |
+
+**Notes:**
+* ❌* - These functions aren't part of these containers by default, but can be applied using STL algorithms like `std::find()`, `std::count()`, etc. with iterators.
+* Queue and stack are adapter containers, which means they provide a specific interface to an underlying container.
+* Priority queue is an adapter that provides a priority queue (implemented as a heap).
+* Map and set have sorted keys, while unordered_map and unordered_set use hash tables.
+* Time complexity varies between container types for the same operation.
+
+## Common Time Complexities
+
+| Container | Access | Insert | Delete | Find | Size |
+|-----------|:------:|:------:|:------:|:----:|:----:|
+| vector | O(1) | O(n) | O(n) | O(n) | O(1) |
+| list | O(n) | O(1)* | O(1)* | O(n) | O(1) |
+| deque | O(1) | O(n) | O(n) | O(n) | O(1) |
+| array | O(1) | N/A | N/A | O(n) | O(1) |
+| forward_list | O(n) | O(1)* | O(1)* | O(n) | O(n) |
+| map | O(log n) | O(log n) | O(log n) | O(log n) | O(1) |
+| unordered_map | O(1) avg | O(1) avg | O(1) avg | O(1) avg | O(1) |
+| set | O(log n) | O(log n) | O(log n) | O(log n) | O(1) |
+| unordered_set | O(1) avg | O(1) avg | O(1) avg | O(1) avg | O(1) |
+
+* For list and forward_list, insertions and deletions are O(1) if you already have an iterator to the position.
+
 ## Common Member Functions (All Containers)
 
 | Function | Signature | Description | Example |
